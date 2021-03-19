@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
-
-export default class AllPost extends Component {
+import {connect} from 'react-redux';
+class AllPost extends Component {
     render() {
         return (
             <div>
                 <h1>All post</h1>
+                {console.log(this.props.posts)}
             </div>
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+    posts: state
+    }
+}
+export default connect(mapStateToProps)(AllPost);
